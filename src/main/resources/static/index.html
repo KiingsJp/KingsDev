@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kings Dev | Engenharia de Software</title>
+
+    <style>
+        :root {
+            --bg-dark: #0b0d10;
+            --bg-light: #11141a;
+            --primary: #6c5ce7;
+            --secondary: #00cec9;
+            --text-main: #ffffff;
+            --text-muted: #b2bec3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        /* =========================
+           HEADER / HERO
+        ========================== */
+        header {
+            min-height: 30vh; /* diminui o HERO */
+            padding: 120px 0; /* controla o espaço interno */
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                    linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(0, 206, 201, 0.05)),
+                    linear-gradient(180deg, #0b0d10, #11141a);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background-image:
+                    repeating-linear-gradient(
+                            45deg,
+                            rgba(255, 255, 255, 0.03),
+                            rgba(255, 255, 255, 0.03) 1px,
+                            transparent 1px,
+                            transparent 20px
+                    );
+
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            padding-left: 6%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+        .about {
+            background-color: var(--bg-light);
+        }
+
+        .about p {
+            max-width: 800px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* =========================
+           SERVICES
+        ========================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: #161a22;
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        /* =========================
+           DIFFERENTIALS
+        ========================== */
+        .differentials {
+            background-color: var(--bg-light);
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        ul li::before {
+            content: "✔";
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 30px;
+            color: var(--text-muted);
+        }
+
+        .contact a {
+            font-size: 1.1rem;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            background-color: #07080a;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+        @media (max-width: 768px) {
+            header {
+                min-height: 60vh;
+                padding: 80px 0;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .hero {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+    <div class="hero">
+        <h1>Kings <span>Dev</span></h1>
+        <p>
+            Engenharia de Software focada em soluções robustas,
+            escaláveis e sob medida para o seu negócio.
+        </p>
+        <a href="#contact" class="btn">Entrar em contato</a>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about">
+    <h2>Sobre nós</h2>
+    <p>
+        A Kings Dev é uma empresa de engenharia de software especializada
+        no desenvolvimento de sistemas modernos, seguros e escaláveis.
+
+        Atuamos desde a concepção da ideia até a entrega e sustentação
+        de soluções digitais de alto impacto.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section>
+    <h2>Serviços</h2>
+
+    <div class="services-grid">
+        <div class="card">
+            <h3>Desenvolvimento Web</h3>
+            <p>
+                Aplicações web modernas, rápidas e seguras,
+                utilizando as melhores práticas de engenharia.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Desenvolvimento Mobile</h3>
+            <p>
+                Aplicativos mobile pensados para oferecer a melhor experiência ao usuário,
+                alinhados aos objetivos do seu negócio.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Integração entre sistemas e serviços</h3>
+            <p>
+                Projetamos e implementamos integrações entre sistemas corporativos, APIs e
+                serviços externos, promovendo automação, consistência de dados e eficiência operacional.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>APIs & Back-end</h3>
+            <p>
+                Arquitetura de sistemas, microsserviços,
+                integrações e APIs escaláveis.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Cloud & DevOps</h3>
+            <p>
+                Infraestrutura em nuvem, containers,
+                CI/CD e automação.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Consultoria Técnica</h3>
+            <p>
+                Apoio estratégico em decisões técnicas,
+                arquitetura e performance.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+<section class="differentials">
+    <h2>Diferenciais</h2>
+
+    <ul>
+        <li>Foco total em engenharia de software</li>
+        <li>Código limpo, escalável e sustentável</li>
+        <li>Visão de produto e negócio</li>
+        <li>Comunicação clara e transparente</li>
+        <li>Soluções sob medida</li>
+    </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contato</h2>
+    <p>
+        Entre em contato para conversar sobre o seu projeto
+        ou necessidade técnica.
+    </p>
+
+    <p>
+        📧 <a href="mailto:ceo@kingsdev.com.br">ceo@kingsdev.com.br</a><br />
+        <a href="https://api.whatsapp.com/send/?phone=5534996843970&text=Ol%C3%A1%2C%20gostaria%20de%20implementar%20meu%20software%20com%20a%20Kings%20Dev%2C%20qual%20a%20primeira%20etapa%3F&type=phone_number&app_absent=0"
+           target="_blank"
+           style="display: inline-flex; align-items: center; gap: 8px;">
+
+            <svg width="18" height="18" viewBox="0 0 32 32" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2.667c-7.364 0-13.333 5.969-13.333 13.333 0 2.351.617 4.652 1.785 6.691L2 30l7.48-2.405A13.268 13.268 0 0016 29.333c7.364 0 13.333-5.969 13.333-13.333S23.364 2.667 16 2.667zm0 24.333a10.93 10.93 0 01-5.579-1.522l-.399-.235-4.433 1.426 1.448-4.318-.26-.445A10.929 10.929 0 015.333 16C5.333 9.859 9.859 5.333 16 5.333S26.667 9.859 26.667 16 22.141 26.667 16 26.667zm6.01-7.825c-.328-.164-1.944-.96-2.245-1.069-.3-.11-.519-.164-.737.164-.219.328-.846 1.069-1.038 1.288-.191.219-.383.246-.711.082-.328-.164-1.385-.51-2.64-1.627-.977-.871-1.636-1.946-1.828-2.274-.191-.328-.021-.505.143-.669.148-.147.328-.383.492-.574.164-.191.219-.328.328-.547.11-.219.055-.41-.027-.574-.082-.164-.737-1.778-1.01-2.438-.266-.637-.537-.55-.737-.56l-.629-.011c-.219 0-.574.082-.874.41-.3.328-1.146 1.119-1.146 2.729 0 1.61 1.173 3.164 1.337 3.383.164.219 2.309 3.53 5.595 4.951.782.337 1.392.538 1.868.688.785.25 1.5.215 2.065.131.63-.094 1.944-.793 2.218-1.56.273-.766.273-1.424.191-1.56-.082-.137-.3-.219-.628-.383z"/>
+            </svg>
+
+            Falar no WhatsApp
+        </a>
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Kings Dev — Engenharia de Software
+</footer>
+
+<script>
+    console.log("Kings Dev - Site carregado com sucesso");
+</script>
+
+</body>
+</html>
+
+
